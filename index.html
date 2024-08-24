@@ -101,23 +101,31 @@
 </div>
 
 <script>
-    let VPoäng = 0
-    let HPoäng = 0
+    if (!localStorage.VPoäng) {
+        localStorage.VPoäng = 0
+    }
+    if (!localStorage.HPoäng) {
+        localStorage.HPoäng = 0
+    }
+
+    $("#VPoäng").text(localStorage.VPoäng)
+    $("#HPoäng").text(localStorage.HPoäng)
+    
     $("#VÖka").on("click", function(){
-        VPoäng += 1
-        $("#VPoäng").text(VPoäng)
+        localStorage.VPoäng = Number(localStorage.VPoäng)+1
+        $("#VPoäng").text(localStorage.VPoäng)
     })
     $("#VMinska").on("click", function(){
-        VPoäng -= 1
-        $("#VPoäng").text(VPoäng)
+        localStorage.VPoäng = Number(localStorage.VPoäng)-1
+        $("#VPoäng").text(localStorage.VPoäng)
     })
     $("#HÖka").on("click", function(){
-        HPoäng += 1
-        $("#HPoäng").text(HPoäng)
+        localStorage.HPoäng = Number(localStorage.HPoäng)+1
+        $("#HPoäng").text(localStorage.HPoäng)
     })
     $("#HMinska").on("click", function(){
-        HPoäng -= 1
-        $("#HPoäng").text(HPoäng)
+        localStorage.HPoäng = Number(localStorage.HPoäng)-1
+        $("#HPoäng").text(localStorage.HPoäng)
     })
 </script>
 </body>
